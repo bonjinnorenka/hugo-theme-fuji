@@ -175,3 +175,6 @@ if (openMenu) {
     }
   });
 }
+window.onload = function() {
+  new LuminousGallery(document.querySelectorAll('.luminous'));
+}
