@@ -14,22 +14,24 @@ Supported languages: `cs`, `de`, `en`, `eo`, `fr`, `ja`, `nl`, `pl`, `pt-pt`, `z
 
 ## 📑 Table of contents
 
-- [💻 Live demos](#-live-demos)
-- [❗ Notice](#-notice)
-- [🐣 Getting started](#-getting-started)
-- [🆕 Update the theme](#-update-the-theme)
-- [⚙️ Configuration](#%EF%B8%8F-configuration)
-  - [🎨 Favicon](#-favicon)
-  - [❌ License, toc and comments](#-license-toc-and-comments)
-  - [🎵 APlayer](#-aplayer)
-  - [📐 Render LaTeX with KaTex](#-render-latex-with-katex)
-  - [📷 Image zoom and lazyload settings](#-image-zoom-and-lazyload-settings)
-  - [⚓ Markdown render hook](#-markdown-render-hook)
-  - [📨 Comments area](#-comments-area)
-  - [🔧 Custom stylesheet configuration](#-custom-stylesheet-configuration)
-- [✏️ Issue and contributing](#%EF%B8%8F-issue-and-contributing)
-- [📝 License](#-license)
-- [🤝 Annotations](#-annotations)
+- [🍥 Fuji 🍥](#-fuji-)
+  - [📑 Table of contents](#-table-of-contents)
+  - [💻 Live demos](#-live-demos)
+  - [❗ Notice](#-notice)
+  - [🐣 Getting started](#-getting-started)
+  - [🆕 Update the theme](#-update-the-theme)
+  - [⚙️ Configuration](#️-configuration)
+    - [🎨 Favicon](#-favicon)
+    - [❌ License, toc and comments](#-license-toc-and-comments)
+    - [🎵 APlayer](#-aplayer)
+    - [📐 Render LaTeX with KaTex](#-render-latex-with-katex)
+    - [📷 Image zoom and lazyload settings](#-image-zoom-and-lazyload-settings)
+    - [⚓ Markdown render hook](#-markdown-render-hook)
+    - [📨 Comments area](#-comments-area)
+    - [🔧 Custom stylesheet configuration](#-custom-stylesheet-configuration)
+  - [✏️ Issue and contributing](#️-issue-and-contributing)
+  - [📝 License](#-license)
+  - [🤝 Annotations](#-annotations)
 
 ## 💻 Live demos
 
@@ -46,7 +48,7 @@ Remember to add [summary divider](https://gohugo.io/content-management/summaries
 Inside the folder of your Hugo site run:
 
 ```bash
-git submodule add https://github.com/dsrkafuu/hugo-theme-fuji.git themes/fuji
+git submodule add https://github.com/bonjinnorenka/hugo-theme-fuji.git themes/fuji
 ```
 
 For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
@@ -150,45 +152,32 @@ Zoomable, not lazyloaded:
 ![Alt text](test/example.png)
 ```
 
-Zoomable, lazyloaded:
+lightbox, lazyload:
 
 <!-- prettier-ignore -->
 ```html
-{{< img-lazy "16x9" "Alt text here" "test/example.png" >}}
+{{< img-lazy-lbox "Alt text here" "test/example.png" "test/exampleBig.png(option)" >}}
 ```
 
-Not zoomable, not lazyloaded, optional ext link:
+lightbox, No lazyload:
 
 <!-- prettier-ignore -->
 ```html
-{{< img-nz "Alt text here" "test/example.png" >}}
+{{< img-lbox "Alt text here" "test/example.png" "test/exampleBig.png(option)" >}}
 ```
 
-Not zoomable, lazyloaded, optional ext link:
+No lightbox, lazyload
 
 <!-- prettier-ignore -->
 ```html
-{{< img-nz-lazy "16x9" "Alt text here" "test/example.png" >}}
+{{< img-lazy "Alt text here" "test/example.png" >}}
 ```
 
-Available image aspect ratios:
+can use old image shortcode
 
-- 40x9
-- 32x9
-- 21x9
-- 18x9
-- 16x9
-- 16x10
-- 3x2
-- 4x3
-- 1x1
-- 3x4
-- 2x3
-- 10x16
-- 9x16
-- 9x18
-- 9x21
-- 9x32
+```html
+{{< img-nz-lazy "aspect(ignore)" "Alt text here" "test/example.png" >}}
+```
 
 ### ⚓ Markdown render hook
 

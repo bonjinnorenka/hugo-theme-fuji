@@ -1,0 +1,3 @@
+{{- if len .Params | eq 3 -}}
+  <img src="{{ index .Params 2 | relURL | safeURL }}" alt="{{ index .Params 1 }}" loading="lazy"/>
+{{- end -}}

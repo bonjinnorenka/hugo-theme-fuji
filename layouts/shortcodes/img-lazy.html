@@ -1,3 +1,6 @@
 {{- if len .Params | eq 2 -}}
-  <img src="{{ index .Params 1 | relURL | safeURL }}" alt="{{ index .Params 0 }}" />
+  <img src="{{ index .Params 1 | relURL | safeURL }}" alt="{{ index .Params 0 }}" loading="lazy"/>
+{{- end -}}
+{{- if len .Params | eq 3 -}}
+  <img src="{{ index .Params 2 | relURL | safeURL }}" alt="{{ index .Params 1 }}" loading="lazy"/>
 {{- end -}}
