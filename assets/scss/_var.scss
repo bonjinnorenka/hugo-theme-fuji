@@ -10,10 +10,8 @@ $font-weight-bold: 600;
 $font-weight-semibold: 600;
 $font-weight-normal: 400;
 $font-weight-light: 400;
-$body-font: sans-serif;
-$mono-font: 'SF Mono', 'Fira Code', 'Consolas', -apple-system, BlinkMacSystemFont, 'SF Pro Text',
-  'Segoe UI', 'Arial', 'Helvetica Neue', 'Helvetica', 'PingFang SC', 'Hiragino Sans GB',
-  'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', monospace !default;
+$body-font: sans-serif !default;
+$mono-font: "Source Han Code JP", "VL Gothic", "Noto Mono", "Ubuntu Mono", "Droid Sans Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "TlwgTypewriter", "Lucida Mono", "Menlo", "Monaco", "Consolas", "Courier New", "Courier", monospace !default;
 $title-font: 'Product Sans', sans-serif !default;
 $body-font-size: 16px !default;
 
