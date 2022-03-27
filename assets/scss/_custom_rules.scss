@@ -1,17 +1,1 @@
 // Override CSS rules with that file
-.lum-gallery-button{
-    display: none;
-}
-input:not(input[name="s"]){
-    padding: 11px;
-    width: 100%;
-    outline: none;
-    border: 2px solid var(--color-divider);
-    color: inherit;
-    background-color: inherit;
-    flex: 1 1 auto;
-    height: 3rem;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-}
