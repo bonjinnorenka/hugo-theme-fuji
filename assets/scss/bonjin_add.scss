@@ -14,3 +14,7 @@ input:not(input[name="s"]){
     font-size: inherit;
     line-height: inherit;
 }
+.under-yellow{
+    text-decoration:underline;/*下線を引く*/
+    text-decoration-color:yellow;/*下線を赤色*/
+}
