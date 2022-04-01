@@ -175,12 +175,6 @@ if (openMenu) {
     }
   });
 }
-/*
-window.onload = function() {
-  new LuminousGallery(document.querySelectorAll('.luminous'));
-}
-*/
 window.addEventListener('load', () => {
-  quicklink.listen();
   new LuminousGallery(document.querySelectorAll('.luminous'));
 });
