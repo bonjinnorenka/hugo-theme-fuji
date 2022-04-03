@@ -1,10 +1,14 @@
 {{- if len .Params | eq 2 -}}
 <a class="luminous" href="{{ index .Params 1 | relURL | safeURL }}">
-    <img src="{{ index .Params 1 | relURL | safeURL }}" alt="{{ index .Params 0 }}" loading="lazy">
+    {{ $photo_path := path.Join "/static" (index .Params 1)}}
+    {{ $photoinfo := imageConfig $photo_path}}
+    <img src="{{ index .Params 1 | relURL | safeURL }}" alt="{{ index .Params 0 }}" loading="lazy" width="{{ $photoinfo.Width }}" height="{{ $photoinfo.Height }}">
 </a><br>
 {{- end -}}
 {{- if len .Params | eq 3 -}}
 <a class="luminous" href="{{ index .Params 2 | relURL | safeURL }}">
-    <img src="{{ index .Params 1 | relURL | safeURL }}" alt="{{ index .Params 0 }}" loading="lazy">
+    {{ $photo_path := path.Join "/static" (index .Params 1)}}
+    {{ $photoinfo := imageConfig $photo_path}}
+    <img src="{{ index .Params 1 | relURL | safeURL }}" alt="{{ index .Params 0 }}" loading="lazy" width="{{ $photoinfo.Width }}" height="{{ $photoinfo.Height }}">
 </a><br>
 {{- end -}}
