@@ -18,8 +18,8 @@
             {{ end }}
         },
         {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
-        "datePublished": "{{ .PublishDate.Format $iso8601 | printf "content=%q" | safeHTMLAttr }}",
-        "dateModified": "{{ .Lastmod.Format $iso8601 | printf "content=%q" | safeHTMLAttr }}",
+        "datePublished": "{{ .PublishDate.Format $iso8601 | printf "%q" | safeHTMLAttr }}",
+        "dateModified": "{{ .Lastmod.Format $iso8601 | printf "%q" | safeHTMLAttr }}",
         "author": {
             "@type": "Person",
             "name": "{{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}",
