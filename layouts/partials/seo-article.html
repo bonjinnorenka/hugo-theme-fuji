@@ -1,0 +1,44 @@
+<!--article-->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage":{
+            "@type":"WebPage",
+            "@id":"{{ .Permalink }}"
+        },
+        "headline": "{{ .Title }} - {{ .Site.Title }}",
+        "image": {
+            "@type": "ImageObject",
+            "url": "{{ .Params.image | absURL }}",
+            {{ $photo_path := path.Join "/static" .Params.image}}
+            {{ with (imageConfig $photo_path)}}
+            "width": {{ .Width }},
+            "height": {{ .Height }}
+            {{ end }}
+        },
+        {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+        "datePublished": "{{ .PublishDate.Format $iso8601 | printf "content=%q" | safeHTMLAttr }}",
+        "dateModified": "{{ .Lastmod.Format $iso8601 | printf "content=%q" | safeHTMLAttr }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}",
+            "url": "{{ "/about/" | absURL }}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ .Site.Title }}",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "{{ .Site.Params.sitelogopath | absURL}}",
+                {{ $photo_path := path.Join "/static" $.Site.Params.sitelogopath}}
+                {{ with (imageConfig $photo_path)}}
+                "width": {{ .Width }},
+                "height": {{ .Height }}
+                {{ end }}
+            }
+        },
+        "description": "{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.description }}{{ end }}"
+        }
+    }
+</script>

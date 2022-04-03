@@ -1,14 +1,16 @@
 {{ define "main" }}
-<article>
+<article itemscope="itemscope" itemprop="blogPost" itemtype="https://schema.org/BlogPosting">
     <!-- post meta -->
-    <h1 class="post-item post-title">
+    {{ partial "bread.html" . }}
+    <h1 class="post-item post-title" itemprop="headline">
         <a href="{{ .Permalink }}">{{ .Title }}</a>
     </h1>
     <div class="post-item post-meta">
         {{ partial "post-meta.html" . }}
     </div>
     <!-- post main content -->
-    <div class="post-content markdown-body">
+    <div class="post-content markdown-body" itemprop="mainEntityOfPage">
+        {{ partial "post-seo.html" . }}
         {{ .Content }}
     </div>
 </article>
