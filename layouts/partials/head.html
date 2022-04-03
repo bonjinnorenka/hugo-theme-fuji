@@ -47,3 +47,6 @@
 {{ end }}
 {{ partial "analytic-gtag.html" . }}
 {{ partial "analytic-cfga.html" . }}
+{{ if .HasShortcode "qa_page" }}
+<html itemscope itemtype="https://schema.org/FAQPage"></html>
+{{ end }}

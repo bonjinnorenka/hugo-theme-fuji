@@ -1,0 +1,10 @@
+{{- if len .Params | eq 2 -}}
+<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <p itemprop="name">{{ index .Params 0 }}</p>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <div itemprop="text">
+            {{ index .Params 1 }}
+        </div>
+    </div>
+</div>
+{{- end -}}
