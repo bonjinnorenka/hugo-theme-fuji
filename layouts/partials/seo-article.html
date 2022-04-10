@@ -10,11 +10,20 @@
         "headline": "{{ .Title }} - {{ .Site.Title }}",
         "image": {
             "@type": "ImageObject",
+            {{ if .Params.image }}
             "url": "{{ .Params.image | absURL }}",
             {{ $photo_path := path.Join "/static" .Params.image}}
             {{ with (imageConfig $photo_path)}}
             "width": {{ .Width }},
             "height": {{ .Height }}
+            {{ end }}
+            {{ else }}
+            "url": "{{ .Site.Params.sitelogopath | absURL}}",
+            {{ $photo_path := path.Join "/static" $.Site.Params.sitelogopath}}
+            {{ with (imageConfig $photo_path)}}
+            "width": {{ .Width }},
+            "height": {{ .Height }}
+            {{ end }}
             {{ end }}
         },
         {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}

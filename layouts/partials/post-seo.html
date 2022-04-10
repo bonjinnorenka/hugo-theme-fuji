@@ -2,11 +2,20 @@
 <time itemprop="dateModified" datetime="{{ .Lastmod.Format $iso8601 | printf "%q" | safeHTMLAttr }}"></time>
 <time itemprop="datePublished" datetime="{{ .PublishDate.Format $iso8601 | printf "%q" | safeHTMLAttr }}"></time>
 <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    {{ if .Params.image }}
     <meta itemprop="url" content="{{ .Params.image | absURL }}">
     {{ $photo_path := path.Join "/static" .Params.image}}
     {{ with (imageConfig $photo_path)}}
     <meta itemprop="width" content="{{ .Width }}">
     <meta itemprop="height" content="{{ .Height }}">
+    {{ end }}
+    {{ else }}
+    <meta itemprop="url" content="{{ .Site.Params.sitelogopath | absURL}}">
+    {{ $photo_path := path.Join "/static" $.Site.Params.sitelogopath}}
+    {{ with (imageConfig $photo_path)}}
+    <meta itemprop="width" content="{{ .Width }}">
+    <meta itemprop="height" content="{{ .Height }}">
+    {{ end }}
     {{ end }}
 </span>
 <span itemprop="editor author creator copyrightHolder" itemscope itemtype="https://schema.org/Person">
