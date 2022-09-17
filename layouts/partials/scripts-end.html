@@ -11,7 +11,7 @@
 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.4.0/dist/luminous-basic.min.css" media="print" onload="this.media='all'" />
 <script defer src="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.4.0/dist/luminous.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/instant.page@5.1.1/instantpage.min.js"></script>
 {{ end }}
 {{ $options := (dict "targetPath" "assets/js/fuji.min.js" "minify" true "target" "es2015" "format" "iife") }}
 {{ $built := resources.Get "js/fuji.js" | js.Build $options }}
